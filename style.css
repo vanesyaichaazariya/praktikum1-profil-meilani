@@ -1,0 +1,406 @@
+/* ========================
+   RESET
+   ======================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background-color: #f0f6fb;
+    color: #22384d;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+    height: auto;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+ul {
+    list-style: none;
+}
+
+/* ========================
+   TEMA OCEAN BLUE
+   ======================== */
+:root {
+    --bg-utama: #f0f6fb;
+    --putih: #ffffff;
+    --navy: #22384d;
+    --navy-lembut: #557089;
+    --aksen: #5fa8d3;
+    --aksen-gelap: #3d87b5;
+    --garis: #d4e4f0;
+    --sidebar-biru: #2e5f86;
+    --sidebar-biru-tua: #1e4664;
+    --sidebar-teks: #eaf4fb;
+    --sidebar-teks-lembut: #b8d4e8;
+}
+
+/* ========================
+   LAYOUT DASAR (MOBILE-FIRST)
+   ======================== */
+.layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* ========================
+   SIDEBAR BIRU (MOBILE - ATAS)
+   ======================== */
+.sidebar {
+    background: linear-gradient(180deg, #2e5f86 0%, #1e4664 100%);
+    color: var(--sidebar-teks);
+    padding: 2rem 1.25rem;
+    text-align: center;
+    width: 100%;
+}
+
+.foto-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1.25rem;
+}
+
+.foto {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid rgba(255, 255, 255, 0.9);
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+}
+
+.nama {
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: #ffffff;
+    line-height: 1.35;
+    margin-bottom: 0.3rem;
+}
+
+.peran {
+    font-size: 0.8rem;
+    color: var(--sidebar-teks-lembut);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    margin-bottom: 1.25rem;
+}
+
+.menu {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.6rem 1rem;
+    margin-bottom: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.menu a {
+    font-size: 0.82rem;
+    color: var(--sidebar-teks-lembut);
+    transition: color 0.2s;
+}
+
+.menu a:hover {
+    color: #ffffff;
+}
+
+.kontak p {
+    font-size: 0.78rem;
+    color: var(--sidebar-teks-lembut);
+    margin-bottom: 0.2rem;
+}
+
+/* ========================
+   KONTEN
+   ======================== */
+.konten {
+    flex: 1;
+    padding: 2rem 1.25rem;
+    width: 100%;
+}
+
+.section {
+    margin-bottom: 2.25rem;
+}
+
+.section h2 {
+    font-size: 1.1rem;
+    color: var(--navy);
+    margin-bottom: 1rem;
+    padding-bottom: 0.4rem;
+    border-bottom: 2px solid var(--aksen);
+    display: inline-block;
+}
+
+.section > p {
+    font-size: 0.9rem;
+    color: var(--navy-lembut);
+}
+
+/* ========================
+   INFO PRIBADI
+   ======================== */
+.info-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+    margin-top: 0.5rem;
+}
+
+.info-item {
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+}
+
+.info-item:hover {
+    border-color: var(--aksen);
+    background-color: #f4f9fd;
+    box-shadow: 0 4px 12px rgba(95, 168, 211, 0.15);
+}
+
+.info-item .label {
+    display: block;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: var(--aksen-gelap);
+    font-weight: 700;
+    margin-bottom: 0.15rem;
+}
+
+.info-item .nilai {
+    display: block;
+    font-size: 0.88rem;
+    color: var(--navy);
+    word-wrap: break-word;
+}
+
+/* ========================
+   KEAHLIAN
+   ======================== */
+.kartu-list {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.8rem;
+    margin-top: 0.5rem;
+}
+
+.kartu {
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-left: 4px solid var(--aksen);
+    border-radius: 6px;
+    padding: 1rem 1.1rem;
+    transition: transform 0.2s, box-shadow 0.2s, border-left-color 0.2s;
+}
+
+.kartu:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 18px rgba(95, 168, 211, 0.18);
+    border-left-color: var(--aksen-gelap);
+}
+
+.kartu h3 {
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-bottom: 0.25rem;
+}
+
+.kartu p {
+    font-size: 0.83rem;
+    color: var(--navy-lembut);
+}
+
+/* ========================
+   PORTOFOLIO (2 ITEM)
+   ======================== */
+.portofolio-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.portofolio-item {
+    background-color: var(--putih);
+    border: 1px solid var(--garis);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.portofolio-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 24px rgba(95, 168, 211, 0.2);
+}
+
+.portofolio-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-bottom: 1px solid var(--garis);
+}
+
+.portofolio-item figcaption {
+    padding: 1rem 1.1rem;
+}
+
+.portofolio-item h3 {
+    font-size: 0.95rem;
+    color: var(--navy);
+    margin-bottom: 0.2rem;
+}
+
+.portofolio-item p {
+    font-size: 0.8rem;
+    color: var(--aksen-gelap);
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+/* ========================
+   FOOTER
+   ======================== */
+.footer {
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--garis);
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--navy-lembut);
+}
+
+/* ===================================================
+   TABLET & KE ATAS (≥ 768px)
+   =================================================== */
+@media (min-width: 768px) {
+    .layout {
+        flex-direction: row;
+    }
+
+    .sidebar {
+        width: 260px;
+        flex-shrink: 0;
+        min-height: 100vh;
+        padding: 2.5rem 1.5rem;
+        text-align: left;
+        position: sticky;
+        top: 0;
+        align-self: flex-start;
+        background: linear-gradient(180deg, #2e5f86 0%, #1e4664 100%);
+    }
+
+    .foto-wrapper {
+        justify-content: flex-start;
+    }
+
+    .nama {
+        font-size: 1.2rem;
+    }
+
+    .menu {
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        gap: 0.55rem;
+    }
+
+    .kontak {
+        text-align: left;
+    }
+
+    .konten {
+        padding: 2.5rem 2rem;
+    }
+
+    .info-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .kartu-list {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portofolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* ===================================================
+   DESKTOP / LAPTOP (≥ 1024px)
+   =================================================== */
+@media (min-width: 1024px) {
+    .sidebar {
+        width: 300px;
+        padding: 3rem 2rem;
+    }
+
+    .foto {
+        width: 150px;
+        height: 150px;
+    }
+
+    .nama {
+        font-size: 1.3rem;
+    }
+
+    .konten {
+        padding: 3rem 3rem;
+    }
+
+    .kartu-list {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .portofolio-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .portofolio-item img {
+        height: 220px;
+    }
+
+    .section h2 {
+        font-size: 1.2rem;
+    }
+}
+
+/* ===================================================
+   LAYAR LEBAR / PC BESAR (≥ 1280px)
+   =================================================== */
+@media (min-width: 1280px) {
+    .sidebar {
+        width: 320px;
+        padding: 3.5rem 2.25rem;
+    }
+
+    .konten {
+        padding: 3.5rem 4rem;
+        max-width: 950px;
+        margin: 0 auto;
+    }
+
+    .portofolio-item img {
+        height: 240px;
+    }
+}
